@@ -3,9 +3,9 @@
 
         public function index()
         {
-			$this->setFlash('Listing Record page too slow, try to optimize it.');
+            $this->setFlash('Listing Record page too slow, try to optimize it.');
 
-            if($this->request->is('post')) {
+            if ($this->request->is('post')) {
                 $limit = $this->request->data('iDisplayLength');
                 $offset = $this->request->data('iDisplayStart');
                 $searchKey = $this->request->data('sSearch');
@@ -13,7 +13,7 @@
                 $conditions = array();
                 $orCondition = array();
 
-                if(empty($searchKey) === false) {
+                if (empty($searchKey) === false) {
                     $searchKey = trim($searchKey);
                     $orCondition[]['id LIKE'] = '%' . $searchKey . '%';
                     $orCondition[]['name LIKE'] = '%' . $searchKey . '%';
@@ -23,7 +23,7 @@
                     ];
                 }
 
-                $records = $this->Record->find('all', array('conditions' => $conditions,'limit' => $limit, 'offset' => $offset));
+                $records = $this->Record->find('all', array('conditions' => $conditions, 'limit' => $limit, 'offset' => $offset));
 
                 $count = $this->Record->find('count', [
                     'conditions' => $conditions
@@ -48,10 +48,10 @@
 
                 return $this->response;
             }
-			
-			
-			$this->set('title',__('List Record'));
-		}
+
+
+            $this->set('title', __('List Record'));
+        }
 		
 		
 // 		public function update(){

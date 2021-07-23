@@ -66,16 +66,16 @@
  * flags =>
  * A key/value array of driver specific connection options.
  */
-class DATABASE_CONFIG {
-
-	public $default = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' 		 => '127.0.0.1',
-		'login'      => 'root',
-		'password'   => '',
-		'database'   => 'trial',
-		'prefix'     => '',
-		'encoding'   => 'utf8',
-	);
+class DATABASE_CONFIG
+{
+    public $default = array(
+        'datasource' => 'Database/Mysql',
+        'persistent' => false,
+        'host' => '127.0.0.1',
+        'login' => 'root',
+        'password' => '',
+        'database' => 'trial',
+        'prefix' => '',
+        'encoding' => 'utf8',
+    );
 }
