@@ -40,7 +40,7 @@
 												<table style="width:100%">
 													<thead>
 														<tr>
-															<th style="border-left:none;width:50%">Part Name</th>
+															<th style="border-left:none;width:50%">Ingredient Name</th>
 															<th>Value</th>
 														</tr>
 													</thead>
