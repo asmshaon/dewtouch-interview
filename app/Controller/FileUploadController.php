@@ -33,7 +33,7 @@ class FileUploadController extends AppController
                     if ($total > 0) {
                         $this->setSuccess(sprintf('Successfully imported %d records', $total));
                     } else {
-                        $this->setSuccess('No data found to import');
+                        $this->setError('No data found to import');
                     }
                 } else {
                     $this->setError('Please upload CSV file only.');
