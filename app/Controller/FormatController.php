@@ -16,7 +16,7 @@
             if ($this->request->is('post') && !empty($this->request->data('Type')['type'])) {
                 $this->set('selected_value', $this->request->data('Type')['type']);;
             } else {
-                $this->setFlash('Nothing selected.');
+                $this->setError('Nothing selected.');
             }
         }
 		
