@@ -49,7 +49,6 @@
                 return $this->response;
             }
 
-
             $this->set('title', __('List Record'));
         }
 		
