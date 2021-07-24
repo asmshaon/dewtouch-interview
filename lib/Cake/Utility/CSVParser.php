@@ -91,7 +91,6 @@ class CSVParser
 
     public function toArray($filename, $is_csv_content = false)
     {
-
         $this->_csv = $is_csv_content ? $filename : file_get_contents($filename);
 
         $CSV_LINEBREAK = $this->linebreak();
@@ -154,7 +153,6 @@ class CSVParser
 
     public function fromArray($items)
     {
-
         if (!is_array($items)) {
             trigger_error('CSV::export array required', E_USER_WARNING);
             return false;

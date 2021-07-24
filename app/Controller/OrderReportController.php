@@ -16,7 +16,7 @@
             $this->set('order_reports', $order_reports);
 
             $this->set('title', __('Orders Report'));
-		}
+        }
 
 		public function Question(){
 
