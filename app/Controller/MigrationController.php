@@ -5,6 +5,8 @@
 
         public function q1()
         {
+            $this->set('title', __('Question: Migration of data to multiple DB table'));
+
             $this->loadModel('Member');
             $this->loadModel('Transaction');
             $this->loadModel('TransactionItem');

@@ -39,6 +39,11 @@
 			$this->set('title',__('Question - Orders Report'));
 		}
 
+        /**
+         * @param $orders
+         * @param $portions
+         * @return array
+         */
         private function getOrderReportArray($orders, $portions)
         {
             $reportArray = array();

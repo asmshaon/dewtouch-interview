@@ -14,6 +14,9 @@
     <?php
     echo $this->Form->create('FileUpload', array('type' => 'file'));
     echo $this->Form->input('file', array('label' => 'File Upload', 'type' => 'file', 'accept' => '.csv'));
+    ?>
+    <br/>
+    <?php
     echo $this->Form->submit('Upload', array('class' => 'btn btn-primary'));
     echo $this->Form->end();
     ?>
@@ -49,3 +52,17 @@
         </tbody>
     </table>
 </div>
+
+<?php $this->start('script_own')?>
+<script>
+    $(document).ready(function(){
+        $('#FileUploadIndexForm').submit(function () {
+            $("input[type='submit']", this)
+                .val("Please Wait...")
+                .attr('disabled', 'disabled');
+
+            return true;
+        });
+    })
+</script>
+<?php $this->end()?>
