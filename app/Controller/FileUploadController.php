@@ -4,6 +4,8 @@ App::uses('CSVParser', 'Utility');
 
 class FileUploadController extends AppController
 {
+    public $components = array('Import');
+
     public function index()
     {
         $this->set('title', __('File Upload Answer'));
@@ -21,14 +23,7 @@ class FileUploadController extends AppController
                     $data = [];
 
                     if ($csv = CSVParser::import($fileName)) {
-                        for ($i = 1; $i < count($csv); $i++) {
-                            if (isset($csv[$i][0]) && isset($csv[$i][1])) {
-                                $data[] = array(
-                                    'name' => $csv[$i][0],
-                                    'email' => $csv[$i][1]
-                                );
-                            }
-                        }
+                        $data = $this->Import->getCSVData($csv);
                     }
 
                     if (count($data) > 0) {
