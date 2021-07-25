@@ -655,3 +655,66 @@ function fixRow(clone,i){
 
 	return clone;
 }
+
+
+function onlyNumberKey(event) {
+	// Only ASCII charactar in that range allowed
+	var ASCIICode = (event.which) ? event.which : event.keyCode
+
+	if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+		return false;
+
+	return true;
+}
+
+function validateFloatKeyPress (el, event, maxLength) {
+	maxLength = el.classList.contains('percent-input') ? 3 : maxLength;
+	var charCode = (event.which) ? event.which : event.keyCode;
+	var number = el.value.split('.');
+	if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+		return false;
+	}
+	//just one dot
+	if(number.length > 1 && charCode == 46) {
+		return false;
+	}
+	//get the carat position
+	var caratPos = getSelectionStart(el);
+	var dotPos = el.value.indexOf(".");
+
+	if (caratPos == 0 && dotPos == -1 && charCode == 46) {
+		return false;
+	}
+
+	if (caratPos > dotPos && dotPos > -1 && (number[1].length > 1)) {
+		return false;
+	}
+
+	if (dotPos <= -1 && el.value.length > maxLength - 1 && charCode != 46) {
+		return false;
+	}
+
+	if (dotPos > -1 && number[0].length > maxLength - 1 && number[1].length == 2) {
+		return false;
+	}
+
+	return true;
+}
+
+function getSelectionStart(o) {
+	if (o.createTextRange) {
+		var r = document.selection.createRange().duplicate()
+		r.moveEnd('character', o.value.length)
+		if (r.text === '') return o.value.length
+		return o.value.lastIndexOf(r.text)
+	} else return o.selectionStart
+}
+
+function moveEnd(o) {
+	if (o.createTextRange) {
+		var r = document.selection.createRange().duplicate()
+		r.moveEnd('character', o.value.length)
+		if (r.text === '') return o.value.length
+		return o.value.lastIndexOf(r.text)
+	} else return o.selectionStart
+}

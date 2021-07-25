@@ -4,8 +4,6 @@
         public function q1()
         {
             $this->set('title', __('Question: Advanced Input Field'));
-
-            $this->loadModel('transaction_items');
         }
 
         public function q1_detail()
