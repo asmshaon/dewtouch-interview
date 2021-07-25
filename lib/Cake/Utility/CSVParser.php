@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class CSVParser
+ */
 class CSVParser
 {
     private $_delimiter;

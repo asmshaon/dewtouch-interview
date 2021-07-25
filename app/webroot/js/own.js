@@ -667,7 +667,7 @@ function onlyNumberKey(event) {
 	return true;
 }
 
-function validateFloatKeyPress (el, event, maxLength) {
+function validateFloatKeyPress(el, event, maxLength) {
 	maxLength = el.classList.contains('percent-input') ? 3 : maxLength;
 	var charCode = (event.which) ? event.which : event.keyCode;
 	var number = el.value.split('.');
@@ -675,7 +675,7 @@ function validateFloatKeyPress (el, event, maxLength) {
 		return false;
 	}
 	//just one dot
-	if(number.length > 1 && charCode == 46) {
+	if (number.length > 1 && charCode == 46) {
 		return false;
 	}
 	//get the carat position

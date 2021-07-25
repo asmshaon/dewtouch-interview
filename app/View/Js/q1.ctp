@@ -69,14 +69,8 @@ Your browser does not support the video tag.
         width: 100%;
     }
 
-    .input {
+    .number {
         border: 1px solid #ccc;
-        line-height: 30px;
-        width: 97.5%;
-    }
-
-    .input:focus-visible, .input:focus {
-        border: 1px solid #999999 !important;
         line-height: 30px;
         width: 97.5%;
     }
