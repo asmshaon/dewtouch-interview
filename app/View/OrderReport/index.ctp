@@ -17,7 +17,7 @@
 					</ul>
 
 					<div class="tab-content">
-						
+
 						<div class="tab-pane row-fluid active" id="tab_item">
 
 							<div class="row-fluid">
@@ -40,7 +40,7 @@
 												<table style="width:100%">
 													<thead>
 														<tr>
-															<th style="border-left:none;width:50%">Part Name</th>
+															<th style="border-left:none;width:50%">Ingredient Name</th>
 															<th>Value</th>
 														</tr>
 													</thead>
@@ -72,7 +72,7 @@
 <?php $this->start('script_own')?>
 <script>
 $(document).ready(function(){
-	
+
 	$("body").on('click','tbody tr.item_tr',function(){
 
 	  	if($(this).next().hasClass("hide")) {
@@ -85,7 +85,7 @@ $(document).ready(function(){
 
 	  return false;
 	 });
-	
+
 })
 </script>
 <?php $this->end()?>

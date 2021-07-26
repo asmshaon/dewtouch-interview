@@ -8,21 +8,26 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach($records as $record):?>
-			<tr>
-				<td><?php echo $record['Record']['id']?></td>
-				<td><?php echo $record['Record']['name']?></td>
-			</tr>	
-			<?php endforeach;?>
 		</tbody>
 	</table>
 </div>
 <?php $this->start('script_own')?>
 <script>
 $(document).ready(function(){
-	$("#table_records").dataTable({
-
-	});
+    $("#table_records").dataTable({
+        "bProcessing": true,
+        "bServerSide": true,
+        "sAjaxSource": "/Record",
+        "fnServerData": function (sSource, aoData, fnCallback, oSettings) {
+            oSettings.jqXHR = $.ajax({
+                "dataType": 'json',
+                "type": "POST",
+                "url": sSource,
+                "data": aoData,
+                "success": fnCallback
+            });
+        }
+    });
 })
 </script>
 <?php $this->end()?>
